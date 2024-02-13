@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+body, html {
+    height: 100vh;
+    background: linear-gradient(135deg, #fa93bc, #fcb69f);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.collapse {
+    height: 0;
+    overflow: hidden;
+}
+
+.collapse .opened {
+    overflow: initial;
+}
+
+.collapsed {
+    display: block;
+}
+
+.btn-heart:not(.collapsed) {
+    display: none;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    margin-left: 150px;
+}
+
+.main__letter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Caveat', sans-serif;
+    background-color: #fff4e4;
+    height: 700px;
+    width: 600px;
+    padding: 10px 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.main__letter_space {
+    padding-right: 45px;
+}
+
+.main__letter_title {
+    margin: 15px 0;
+    font-size: 1.8rem;
+}
+
+.main__letter_text {
+    font-size: 1.4rem;
+}
+
+.main__letter_sign {
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    font-size: 1.4rem;
+}
+
+.heart {
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    margin-top: 10px;
+    bottom: -50px;
+    left: 44%;
+    animation: heartbeat 0.6s infinite;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: red;
+}
+
+.heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.btn-heart:hover::before, .btn-heart:hover::after {
+    background: #dc0101;
+}
+
+.btn-heart {
+    width: 100px;
+    height: 90px;
+    transform: translateX(-50%);
+    border: none;
+    background: none;
+    animation: heartbeat 0.6s infinite;
+}
+
+.btn-heart::before, .btn-heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: red;
+}
+
+.btn-heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.btn-heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
